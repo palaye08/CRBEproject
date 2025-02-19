@@ -1,0 +1,40 @@
+<div class="accueil">
+    <div class="header">
+        <h1 class="textcbre">CBRE</h1>
+        <div class="menu">
+            <ul>
+                <li><a class="Services" routerLink="/Services">Services</a></li>
+                <li><a class="Insights&Research" routerLink="/Insights&Research">Insights & Research</a></li>
+                <li><a class="Properties" routerLink="/Properties">Properties</a></li>
+                <li><a class="Offices" routerLink="/Offices">Offices</a></li>
+                <li><a class="Careers" routerLink="/Careers">Careers</a></li>
+                <li><a class="About-as" routerLink="/About">About as</a></li>
+                <li class="flag-item">
+                    <a class="Drapeau" routerLink="/Drapeau">
+                        <img src="img/drapeau.png" alt="Drapeau" class="flag-icon">
+                    </a>
+                </li>
+                <li class="search-item">
+                    <a class="Recherche" routerLink="/Recherche">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="image-accueil">
+        <img [src]="imagesPath[currentImageIndex]" alt="Accueil">
+        <div class="indicators">
+            <span 
+                *ngFor="let image of imagesPath; let i = index" 
+                class="indicator"
+                [class.active]="i === currentImageIndex"
+                (click)="setCurrentImage(i)">
+            </span>
+        </div>
+    </div>
+</div>
