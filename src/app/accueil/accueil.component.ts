@@ -18,11 +18,18 @@ export class AccueilComponent implements OnInit, OnDestroy {
     'img/imgclimat.png'
   ];
 
+  texts: string[] = [
+    'Ellis AI Digital Assistants',
+    'Us Market Outlook 2025',
+    'Accelerete Sustainability',
+    'Climate Transition Strategy',
+    'Where Potential Become Real'
+  ];
+
   currentImageIndex: number = 0;
   private intervalId: any;
 
   ngOnInit() {
-    // Démarrer le slider seulement côté client
     if (typeof window !== 'undefined') {
       this.startImageSlider();
     }
@@ -44,3 +51,4 @@ export class AccueilComponent implements OnInit, OnDestroy {
     this.currentImageIndex = index;
   }
 }
+
