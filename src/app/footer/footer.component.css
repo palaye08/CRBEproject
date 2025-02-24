@@ -1,0 +1,118 @@
+/* footer.component.css */
+.footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  border-top: 4px solid #002a2e;
+  padding: 2rem 0;
+}
+
+.company-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #002a2e;
+}
+
+.footer-content {
+  display: flex;
+  gap: 4rem;
+}
+
+.logo-section {
+  flex: 0 0 25%;
+}
+
+.main-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: -240px;
+}
+
+.main-links li {
+  margin-bottom: 1rem;
+}
+
+.main-links a {
+  color: #002a2e;
+  text-decoration: none;
+}
+
+.main-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 4px solid #e5e5e5;
+  padding: 2rem 0;
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.bottom-links a {
+  color: #002a2e;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: #002a2e;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #5bd67a;
+  opacity: 0.8;
+}
+
+.cookie-settings {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: 1px solid #002a2e;
+  color: #002a2e;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .bottom-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+  }
+}

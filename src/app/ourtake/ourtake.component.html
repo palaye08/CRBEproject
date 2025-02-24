@@ -1,0 +1,13 @@
+<!-- ourtake.component.html -->
+<section class="newsletter-section">
+    <div class="newsletter-content">
+      <div class="text-content">
+        <h2>{{ ourTakeContent.title }}</h2>
+        <p>{{ ourTakeContent.subtitle }}</p>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
+      <div class="image-container">
+        <img [src]="ourTakeContent.image.src" [alt]="ourTakeContent.image.alt">
+      </div>
+    </div>
+  </section>

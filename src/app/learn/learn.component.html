@@ -1,0 +1,57 @@
+
+<section class="learn-section">
+    <div class="header">
+        <h1>
+            We are the global leader in commercial real estate services and investments.
+            With services, insights and data that span every dimension of the industry, 
+            we create solutions for clients of every size, in every sector and across every 
+            geography.
+        </h1>
+      <a href="#" class="learn-more">Learn More</a>
+    </div>
+  
+    <div class="content-sections">
+      <div class="what-we-do">
+        <h2>{{sections[0].title}}</h2>
+      </div>
+  
+      <div class="content-blocks">
+        <div class="insights-block">
+          <div class="category-label">{{sections[0].category}}</div>
+          <div class="content-wrapper">
+            <h3>{{sections[0].heading}}</h3>
+            <div class="description-box">
+              <p>{{sections[0].description}}</p>
+              <a href="#" class="explore-link">{{sections[0].link}}</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="services-block">
+          <div class="category-label">{{sections[1].category}}</div>
+          <div class="content-wrapper">
+            <h3 >{{sections[1].title}}</h3>
+            <div class="description-box">
+              <ul>
+                <li *ngFor="let service of sections[1].services">
+                  - {{service}}
+                </li>
+              </ul>
+              <a href="#" class="explore-link">{{sections[1].link}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="insights-block">
+          <div class="category-label">Careers</div>
+          <div class="content-wrapper">
+            <h3>Join us</h3>
+            <div class="description-box">
+              <p>We don't just realize the potential in real estate. We help you realize your potential.</p>
+              <a href="#" class="explore-link">Explore Careers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

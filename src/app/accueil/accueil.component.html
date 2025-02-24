@@ -1,7 +1,14 @@
 <div class="accueil">
     <div class="header">
         <h1 class="textcbre">CBRE</h1>
-        <div class="menu">
+        
+        <button class="hamburger-btn" [class.open]="isMenuOpen" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <div class="menu" [class.open]="isMenuOpen">
             <ul>
                 <li><a class="Services" routerLink="/Services">Services</a></li>
                 <li><a class="Insights&Research" routerLink="/Insights&Research">Insights & Research</a></li>
@@ -35,7 +42,7 @@
         <!-- ✅ Card avec texte synchronisé -->
         <div class="info-card">
             <h1>{{ texts[currentImageIndex] }}</h1>
-            <!-- <p>{{ descriptions[currentImageIndex] }}</p> -->
+            <p class="info-card-footer">{{ footerTexts[currentImageIndex] }}</p>
         </div>
 
         <div class="indicators">
@@ -47,4 +54,12 @@
             </span>
         </div>
     </div>
+    <!-- le composant Learn -->
+    <app-learn></app-learn>
+    <!-- le composant OurTake -->
+     <app-ourtake></app-ourtake>
+     <!-- le composant Latest -->
+      <app-latest></app-latest>
+      <!-- le composant Commitment -->
+      <app-commitment></app-commitment>
 </div>

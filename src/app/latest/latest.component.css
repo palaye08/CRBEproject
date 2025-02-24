@@ -1,0 +1,150 @@
+/* latest-insights.component.css */
+.latest-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+  
+.section-title {
+    font-size: 3.5rem;
+    color: #002a2e;
+    margin-bottom: 3rem;
+    font-weight: normal;
+}
+  
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+  
+.insight-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+  
+.card-content {
+    position: relative;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 4px;
+    z-index: 1;
+}
+  
+.card-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: #002a2e;
+}
+  
+.card-type {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+  
+.card-title {
+    font-size: 1.5rem;
+    color: #002a2e;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+  
+.card-date {
+    font-size: 0.875rem;
+    color: #666;
+}
+  
+.image-container {
+    position: relative;
+    top: 90px;
+    width: calc(100% + 3rem);
+    margin-left: auto;
+    overflow: visible;
+    cursor: pointer; /* Ajout du curseur pointer pour indiquer l'interactivité */
+}
+  
+.image-container img {
+    width: 80%;
+    height: 370px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    left: 50px;
+}
+  
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 80%;
+    height: 370px;
+    background-color: #e6e6e6;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    visibility: hidden; /* Cache l'overlay par défaut */
+    opacity: 0; /* Rend l'overlay transparent par défaut */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+}
+.overlay-text {
+  
+    font-size: larger;
+    position:relative;
+    font-size: 1.2rem;
+    left: 14px;
+    max-width: 340px;
+}
+  
+.image-container:hover .hover-overlay {
+    transform: translateX(0);
+    visibility: visible; /* Rend l'overlay visible au hover */
+    opacity: 1; /* Rend l'overlay opaque au hover */
+}
+  
+
+.learn-more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    color: #002a2e;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+@media (max-width: 1024px) {
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+  
+@media (max-width: 768px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .image-container {
+        width: 100%;
+    }
+
+    .image-container img {
+        width: 100%;
+        left: 0;
+    }
+
+    .hover-overlay {
+        width: 100%;
+        left: 0;
+    }
+}

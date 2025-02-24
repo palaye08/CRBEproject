@@ -1,0 +1,122 @@
+/* ourtake.component.css */
+.newsletter-section {
+    width: 100%;
+    background-color: #77909c;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .newsletter-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    padding: 4rem;
+  }
+  
+  .text-content {
+    width: 66.66%; /* 2/3 of the space */
+    color: white;
+    padding-right: 4rem;
+  }
+  
+  h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    max-width: 580px;
+  }
+  
+  .subscribe-btn {
+    background-color: white;
+    color: #002a2e;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: #002a2e;
+    color: white;
+  }
+  
+  .image-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40.33%; /* 1/3 of the space */
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-container img {
+    width: flex;
+
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+  }
+  
+  @media (max-width: 1200px) {
+    .text-content {
+      width: 60%;
+      padding-right: 2rem;
+    }
+    
+    .image-container {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .newsletter-content {
+      flex-direction: column;
+      padding: 3rem 2rem;
+    }
+  
+    .text-content {
+      width: 100%;
+      padding-right: 0;
+      text-align: center;
+    }
+  
+    .image-container {
+      position: relative;
+      width: 100%;
+      margin-top: 2rem;
+      transform: none;
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      margin: 0 auto 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1.125rem;
+    }
+  }

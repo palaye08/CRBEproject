@@ -1,0 +1,22 @@
+<!-- latest-insights.component.html -->
+<section class="latest-section">
+  <h2 class="section-title">Latest Insights</h2>
+  
+  <div class="insights-grid">
+    <div class="insight-card" *ngFor="let insight of insights">
+      <div class="card-content">
+        <div class="card-header"></div>
+        <div class="card-type">{{ insight.type }}</div>
+        <h3 class="card-title">{{ insight.title }}</h3>
+        <p class="card-date">{{ insight.date }}</p>
+      </div>
+      <div class="image-container">
+        <img [src]="insight.image" [alt]="insight.title">
+        <div class="hover-overlay">
+          <p class="overlay-text">{{ insight.description }}</p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
