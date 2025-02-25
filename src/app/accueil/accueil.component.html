@@ -1,5 +1,5 @@
 <div class="accueil">
-    <div class="header">
+    <div class="header" #mainHeader [class.white-bg]="isDropdownOpen">
         <h1 class="textcbre">CBRE</h1>
         
         <button class="hamburger-btn" [class.open]="isMenuOpen" (click)="toggleMenu()">
@@ -7,15 +7,153 @@
             <span></span>
             <span></span>
         </button>
-    
+        
         <div class="menu" [class.open]="isMenuOpen">
             <ul>
-                <li><a class="Services" routerLink="/Services">Services</a></li>
-                <li><a class="Insights&Research" routerLink="/Insights&Research">Insights & Research</a></li>
-                <li><a class="Properties" routerLink="/Properties">Properties</a></li>
-                <li><a class="Offices" routerLink="/Offices">Offices</a></li>
-                <li><a class="Careers" routerLink="/Careers">Careers</a></li>
-                <li><a class="About-as" routerLink="/About">About as</a></li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('services')" 
+                    (mouseleave)="hideDropdown('services')">
+                    <a class="Services" routerLink="/Services">Services</a>
+                    <div class="dropdown-menu" [class.show]="activeDropdown === 'services'">
+                        <div class="dropdown-content">
+                            <div class="description">
+                            <h1>Services</h1>
+                            <p class="description-text">
+                                Unlock the value in every dimension 
+                                of your real estate with integrated,
+                                 data-led services that support your overall
+                                  business strategy.
+                            </p>
+                            <button>See Overview</button>
+
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Needs</h3>
+                                <ul>
+                                    <li><a href="#">Invest, Finance & Value</a></li>
+                                    <li><a href="#">Plan, Lease & Occupy</a></li>
+                                    <li><a href="#">Design & Build</a></li>
+                                    <li><a href="#">Manage Properties & Portfolios</a></li>
+                                    <li><a href="#">Transform Business Outcomes</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Property Types</h3>
+                                <ul>
+                                    <li><a href="#">Office</a></li>
+                                    <li><a href="#">Retail</a></li>
+                                    <li><a href="#">Industrial</a></li>
+                                    <li><a href="#">Multifamily</a></li>
+                                    <li><a href="#">Hotels</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Industries</h3>
+                                <ul>
+                                    <li><a href="#">Data Center</a></li>
+                                    <li><a href="#">Life Sciences</a></li>
+                                    <li><a href="#">Banking & Financial Services</a></li>
+                                    <li><a href="#">Tech, Media & Telecommunications</a></li>
+                                    <li><a href="#">Healthcare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('insights')" 
+                    (mouseleave)="hideDropdown('insights')">
+                    <a class="Insights&Research" routerLink="/Insights&Research">Insights & Research</a>
+                    <div class="dropdown-menu" [class.show]="activeDropdown === 'insights'">
+                        <div class="dropdown-content">
+                            <div class="description">
+                            <h1>Insights & Research</h1>
+                            <p class="description-text">
+                                Our unmatched research and thought
+                                 leadership platform delivers actionable 
+                                 insights to help our clients make informed
+                                  business decisions.
+                            </p>
+                            <button>Explore Insights & Research</button>
+
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Needs</h3>
+                                <ul>
+                                    <li><a href="#">Invest, Finance & Value</a></li>
+                                    <li><a href="#">Plan, Lease & Occupy</a></li>
+                                    <li><a href="#">Design & Build</a></li>
+                                    <li><a href="#">Manage Properties & Portfolios</a></li>
+                                    <li><a href="#">Transform Business Outcomes</a></li>
+                                </ul>
+                            </div>
+                        
+                            <div class="dropdown-column">
+                                <h3>Industries</h3>
+                                <ul>
+                                    <li><a href="#">Data Center</a></li>
+                                    <li><a href="#">Life Sciences</a></li>
+                                    <li><a href="#">Banking & Financial Services</a></li>
+                                    <li><a href="#">Tech, Media & Telecommunications</a></li>
+                                    <li><a href="#">Healthcare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('properties')" 
+                    (mouseleave)="hideDropdown('properties')">
+                    <a class="Properties" routerLink="/Properties">Properties</a>
+                    <div class="dropdown-menu" [class.show]="activeDropdown === 'properties'">
+                        <div class="dropdown-content">
+                            <div class="description">
+                            <h1>Properties</h1>
+                            <p class="description-text">
+                                Find the ideal office, industrial or 
+                                retail property for your team or source
+                                 specialized spaces for multifamily, healthcare,
+                                  technology and more. Let us guide you to your next 
+                                  investment or leasing opportunity.
+                            </p>
+                            <button>Overview</button>
+
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>For Lease</h3>
+                                <ul>
+                                    <li><a href="#">Proporties for Lease</a></li>
+                          
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>For Sal</h3>
+                                <ul>
+                                    <li><a href="#">Proporties for Sal</a></li>
+                                    <li><a href="#">Investissemet Proporties for Sal</a></li>
+                                
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('offices')" 
+                    (mouseleave)="hideDropdown('offices')">
+                    <a class="Offices" routerLink="/Offices">Offices</a>
+                </li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('careers')" 
+                    (mouseleave)="hideDropdown('careers')">
+                    <a class="Careers" routerLink="/Careers">Careers</a>
+                </li>
+                <li class="nav-item" 
+                    (mouseenter)="showDropdown('about')" 
+                    (mouseleave)="hideDropdown('about')">
+                    <a class="About-as" routerLink="/About">About as</a>
+                </li>
                 <li class="flag-item">
                     <a class="Drapeau" routerLink="/Drapeau">
                         <img src="img/drapeau.png" alt="Drapeau" class="flag-icon">
@@ -32,22 +170,22 @@
             </ul>
         </div>
     </div>
-
+    
     <div class="image-accueil">
         <img [src]="imagesPath[currentImageIndex]" alt="Accueil">
-
-        <!-- ✅ Trait blanc -->
+        
+        <!-- Trait blanc -->
         <div class="divider-line"></div>
-
-        <!-- ✅ Card avec texte synchronisé -->
+        
+        <!-- Card avec texte synchronisé -->
         <div class="info-card">
             <h1>{{ texts[currentImageIndex] }}</h1>
             <p class="info-card-footer">{{ footerTexts[currentImageIndex] }}</p>
         </div>
-
+        
         <div class="indicators">
-            <span 
-                *ngFor="let image of imagesPath; let i = index" 
+            <span
+                *ngFor="let image of imagesPath; let i = index"
                 class="indicator"
                 [class.active]="i === currentImageIndex"
                 (click)="setCurrentImage(i)">
@@ -57,9 +195,9 @@
     <!-- le composant Learn -->
     <app-learn></app-learn>
     <!-- le composant OurTake -->
-     <app-ourtake></app-ourtake>
-     <!-- le composant Latest -->
-      <app-latest></app-latest>
-      <!-- le composant Commitment -->
-      <app-commitment></app-commitment>
+    <app-ourtake></app-ourtake>
+    <!-- le composant Latest -->
+    <app-latest></app-latest>
+    <!-- le composant Commitment -->
+    <app-commitment></app-commitment>
 </div>

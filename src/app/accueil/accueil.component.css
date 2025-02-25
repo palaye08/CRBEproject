@@ -1,4 +1,4 @@
-
+/* Styles existants */
 .accueil {
     width: 100vw;
     overflow-x: hidden;
@@ -12,6 +12,23 @@
     align-items: center;
     padding: 0 20px;
     width: 100%;
+    position: relative;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Header en blanc lors du hover */
+.header.white-bg {
+    background-color: white;
+}
+
+.header.white-bg .textcbre,
+.header.white-bg .menu a {
+    color: #002a2e;
+}
+
+.header.white-bg .search-icon {
+    color: #002a2e;
 }
 
 .textcbre {
@@ -40,6 +57,7 @@
     margin-left: 20px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .menu a {
@@ -53,10 +71,154 @@
 }
 
 .menu a:hover {
-    background-color: #007b7f;
+    background-color: transparent;
 }
 
-/* Styles pour le drapeau */
+/* Dropdown menu */
+.nav-item {
+    position: relative;
+}
+
+/* Styles pour le dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 150%;
+    left: -1300px;
+    height: 50vh;
+    width: 130vw;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    margin-left: -20px; /* Ajustement pour l'alignement avec le bord gauche */
+}
+
+.dropdown-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenu du dropdown */
+.dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+/* Styles améliorés pour la partie description dans le dropdown */
+.dropdown-content .description {
+    padding-left: 0; /* Décalage à gauche */
+    position: relative;
+    left: -200px;
+    margin-right: 50px; /* Augmentation de l'espace entre la description et les colonnes */
+    max-width: 300px; /* Contrôle de la largeur maximale */
+    font-size: 20px; /* Augmentation significative de la taille du titre Services */
+
+}
+
+.dropdown-content .description h1 {
+    font-size: 48px; /* Augmentation significative de la taille du titre Services */
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px; /* Améliore la lisibilité des grands titres */
+    color: #002a2e;
+}
+
+.dropdown-content .description .description-text {
+    font-size: 19px; /* Légère augmentation de la taille du texte descriptif */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px; /* Augmentation de la largeur du texte */
+    color: #444444; /* Couleur un peu plus foncée pour meilleure lisibilité */
+}
+
+.dropdown-content .description button {
+    background: #002a2e;
+    color: white;
+    padding: 14px 20px; /* Bouton plus grand */
+    border: none;
+    font-size: 17px; /* Texte du bouton légèrement plus grand */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px; /* Légère bordure arrondie */
+    letter-spacing: 0.5px; /* Espacement des lettres */
+}
+
+.dropdown-content .description button:hover {
+    background: #46c333;
+    transform: translateY(-2px); /* Effet de léger soulèvement au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre au survol */
+}
+
+/* Ajustement du layout du dropdown content */
+.dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1300px; /* Légère augmentation pour plus d'espace */
+    margin: 0 auto;
+    padding: 40px 0; /* Plus d'espace vertical */
+    align-items: flex-start; /* Aligne les éléments au début */
+   
+}
+
+/* Ajustement de la taille des colonnes */
+.dropdown-content > div {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.dropdown-content .description {
+    flex: 1.8; /* Donne encore plus d'espace à la description */
+}
+
+/* Ajustement des colonnes de liens pour équilibrer avec la description plus grande */
+.dropdown-column {
+    padding-top: 10px; /* Aligne visuellement avec la description */
+}
+
+.dropdown-column h3 {
+    color: #77909c;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+/* Modification pour aligner les li horizontalement dans le dropdown */
+.dropdown-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;  /* Affiche les éléments en ligne */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+}
+
+.dropdown-column li {
+    margin: 10px 20px 10px 0; /* Ajoute une marge à droite pour l'espacement */
+    display: inline-block; /* Affiche les éléments en ligne */
+}
+
+.dropdown-column a {
+    color: #002a2e;
+    font-size: 22px;
+    padding: 5px 0;
+    white-space: nowrap; /* Empêche le texte de se couper */
+    transition: color 0.2s;
+}
+
+
+.dropdown-column a:hover {
+    color: #005a5e;
+}
+
+
+/* Styles existants pour le flag et search */
 .flag-item {
     display: flex;
     align-items: center;
@@ -68,7 +230,6 @@
     vertical-align: middle;
 }
 
-/* Styles pour l'icône de recherche */
 .search-item {
     display: flex;
     align-items: center;
@@ -144,32 +305,7 @@
     }
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 1024px) {
-    .menu li {
-        margin-left: 15px;
-    }
-    
-    .menu a {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 0 10px;
-    }
-    
-    .textcbre {
-        font-size: 20px;
-    }
-    
-    .menu li {
-        margin-left: 10px;
-    }
-}
-
-/* ✅ Trait blanc au milieu de l'image */
+/* Trait blanc au milieu de l'image */
 .divider-line {
     position: absolute;
     top: 50%;
@@ -198,12 +334,12 @@
     animation: slideCard 15s infinite ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ajout pour espacer le contenu */
+    justify-content: space-between;
 }
 
 .info-card h1 {
     animation: fadeText 12s infinite ease-in-out;
-    margin-bottom: auto; /* Pousse le texte vers le haut */
+    margin-bottom: auto;
 }
 
 .info-card-footer {
@@ -214,23 +350,7 @@
     animation: fadeText 12s infinite ease-in-out;
 }
 
-/* Ajustement pour le responsive */
-@media screen and (max-width: 1024px) {
-    .info-card {
-        font-size: 1.5em;
-    }
-    
-    .info-card-footer {
-        font-size: 0.4em;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .info-card {
-        display: none;
-    }
-}
-/* ✅ Animation de la card avec changement de texte */
+/* Animation de la card avec changement de texte */
 @keyframes slideCard {
     0% { left: -5%; opacity: 1; }
     25% { left: 15%; opacity: 1; }
@@ -239,7 +359,7 @@
     100% { left: 70%; opacity: 1; }
 }
 
-/* ✅ Animation pour changer le texte */
+/* Animation pour changer le texte */
 @keyframes fadeText {
     0%, 25%, 50%, 75%, 100% {
         opacity: 1;
@@ -247,11 +367,6 @@
     12.5%, 37.5%, 62.5%, 87.5% {
         opacity: 0;
     }
-}
-
-/* ✅ Appliquer l'animation au texte */
-.info-card h1 {
-    animation: fadeText 12s infinite ease-in-out;
 }
 
 /* Hamburger menu button */
@@ -278,24 +393,14 @@
     transform-origin: 1px;
 }
 
-/* Menu styles */
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.menu.open ul {
-    right: 0;
-}
-
-/* Hamburger menu button - Modified */
+/* Styles menu hamburger */
 .hamburger-btn {
-    display: none; /* Will be shown in media query */
+    display: none;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001; /* Increased z-index to ensure visibility */
+    z-index: 1001;
     position: relative;
     width: 30px;
     height: 25px;
@@ -309,6 +414,10 @@
     background-color: #ffffff;
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
+}
+
+.header.white-bg .hamburger-btn span {
+    background-color: #002a2e;
 }
 
 /* Position each span */
@@ -350,6 +459,7 @@
         transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
+    
     .info-card {
         display: none;
     }
@@ -370,6 +480,11 @@
         width: 100%;
         justify-content: center;
         padding: 10px;
+    }
+
+    /* Dans le menu mobile, on cache les dropdowns */
+    .dropdown-menu {
+        display: none !important;
     }
 
     /* Hamburger animation when open */

@@ -7,6 +7,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    height: 50px;
   }
   
   .newsletter-content {
@@ -16,6 +17,7 @@
     display: flex;
     position: relative;
     padding: 4rem;
+    left: -130px;
   }
   
   .text-content {
@@ -25,7 +27,7 @@
   }
   
   h2 {
-    font-size: 3.5rem;
+    font-size: 4.2rem;
     font-weight: normal;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -58,7 +60,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 40.33%; /* 1/3 of the space */
+    width: 33.33%; /* 1/3 of the space */
     height: 100%;
     display: flex;
     align-items: center;
