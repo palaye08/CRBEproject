@@ -432,8 +432,7 @@
 .hamburger-btn span:nth-child(3) {
     top: 20px;
 }
-
-/* Media query adjustments */
+/* Styles pour le menu hamburger qui s'affiche à gauche avec carte blanche */
 @media screen and (max-width: 1024px) {
     /* Show hamburger button */
     .hamburger-btn {
@@ -442,44 +441,63 @@
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 1002; /* Augmenté pour être au-dessus de l'overlay */
     }
 
+    /* Overlay blanc pour le menu mobile */
+    .menu.open::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 999;
+    }
+    
+    .info-card{
+        display: none;
+    }
     /* Hide default menu */
     .menu ul {
         display: none;
         position: fixed;
-        right: -100%;
+        left: -100%; /* Changé de right à left pour ouvrir depuis la gauche */
         top: 90px;
-        background-color: #002a2e;
+        background-color: transparent; /* Transparent car on utilise l'overlay blanc */
         height: calc(100vh - 90px);
         width: 250px;
         flex-direction: column;
         padding: 20px;
         margin: 0;
-        transition: right 0.3s ease-in-out;
+        transition: left 0.3s ease-in-out; /* Modifié pour l'animation depuis la gauche */
         z-index: 1000;
-    }
-    
-    .info-card {
-        display: none;
     }
 
     /* Show menu when open */
     .menu.open ul {
         display: flex;
-        right: 0;
+        left: 0; /* Ouvre depuis la gauche */
+    }
+
+    /* Adapter les couleurs du texte pour le fond blanc */
+    .menu.open a,
+    .menu.open .textcbre {
+        color: #002a2e; /* Texte foncé sur fond blanc */
     }
 
     .menu li {
         margin: 15px 0;
         width: 100%;
-        justify-content: center;
+        justify-content: flex-start; /* Aligné à gauche */
     }
 
     .menu a {
         width: 100%;
-        justify-content: center;
+        justify-content: flex-start; /* Aligné à gauche */
         padding: 10px;
+        font-size: 18px; /* Taille plus grande pour meilleure lisibilité sur mobile */
     }
 
     /* Dans le menu mobile, on cache les dropdowns */
@@ -488,6 +506,10 @@
     }
 
     /* Hamburger animation when open */
+    .hamburger-btn.open span {
+        background-color: #002a2e; /* Hamburger foncé quand ouvert sur fond blanc */
+    }
+    
     .hamburger-btn.open span:first-child {
         transform: rotate(45deg);
         top: 10px;
@@ -501,6 +523,24 @@
         transform: rotate(-45deg);
         top: 10px;
     }
+    
+    /* Ajout d'animation pour l'apparition du menu */
+    .menu.open ul li {
+        opacity: 0;
+        animation: fadeInLeft 0.3s forwards;
+        animation-delay: calc(0.1s * var(--item-index, 0));
+    }
+    
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
 
 /* Additional responsive adjustments */
@@ -511,5 +551,10 @@
 
     .hamburger-btn {
         right: 15px;
+    }
+    
+    .menu ul {
+        width: 100%; /* Menu pleine largeur sur très petits écrans */
+        align-items: flex-start; /* Alignement à gauche */
     }
 }
